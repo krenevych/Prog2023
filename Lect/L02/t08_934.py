@@ -1,9 +1,11 @@
-# a, b, c = [int(schos) for schos in input().split()]
+a, b, c = [int(schos) for schos in input().split()]
 
-# print(a, b, c)
+p = (a + b + c) / 2
+S = (p * (p - a) * (p - b) * (p - c)) ** 0.5
 
-# print(f"a = {a}, b = {b}, c = {c}")
+ha = 2 * S / a  # висота опущена на сторону a
+hb = 2 * S / b  # висота опущена на сторону b
+hc = 2 * S / c  # висота опущена на сторону c
 
-pi = 3.14159
-
-print(f"pi = |{pi:0.2f}|")
+print(f"{ha:0.2f} {hb:0.2f} {hc:0.2f} ")
+# print(ha, hb, hc)
