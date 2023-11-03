@@ -5,9 +5,15 @@ def isPrime(p):
             return False
     return True
 def isSqr(p):
-    return False
+    return (int(p ** 0.5))**2 == p
+
 def isPow5(p):
-    return False
+    while p > 1:
+        if p % 5 != 0:
+            return False
+        p = p // 5
+
+    return True
 
 # n = int(input())
 # seq = [int(el) for el in input().split()]
