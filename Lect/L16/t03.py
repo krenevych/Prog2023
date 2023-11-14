@@ -1,0 +1,5 @@
+my_file = open("input.txt", "rt")
+# content = my_file.read()
+content = my_file.read(10)
+print(content)
+my_file.close()

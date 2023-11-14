@@ -1,0 +1,8 @@
+my_file = open("input.txt", "rt")
+# line = my_file.readline()
+# print(line)
+# line = my_file.readline()
+# print(line)
+lines = my_file.readlines()
+print(lines)
+my_file.close()

@@ -1,0 +1,6 @@
+my_file = open("out2.txt", "wt")
+# my_file.write("Hello!\n")
+# my_file.write(str(55))
+print("Hello!", file=my_file)
+print(55, file=my_file)
+my_file.close()
