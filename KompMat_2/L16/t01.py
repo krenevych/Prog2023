@@ -20,3 +20,20 @@ def printMatrix(M):
 M = readMatrix("input.txt")
 # print(M)
 printMatrix(M)
+count = 0
+suma = 0
+for row in M:
+    for el in row:
+        # if el < 0 and el % 2 == 0:
+        #     count += 1
+        #     suma += el
+        if el < 0:
+            el = -el
+print()
+for i in range(len(M)):
+    for j in range(len(M[0])):
+        if M[i][j] < 0:
+            M[i][j] = -M[i][j]
+printMatrix(M)
+
+
