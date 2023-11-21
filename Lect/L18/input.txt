@@ -1,0 +1,2 @@
+Like ExceptionGroup, any subclass of BaseExceptionGroup which is also a
+subclass of Exception can only wrap instances of Exception.
