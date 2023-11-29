@@ -11,7 +11,6 @@ def read():
         deg, coef = map(int, f.readline().split())
         second[deg] = coef
 
-    return first, second
 
 def mult(P: dict, Q: dict):
     R = {}

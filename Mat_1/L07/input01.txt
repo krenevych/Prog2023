@@ -1,0 +1,2 @@
+N = int(input())
+numbers = [int(el) for el in input().split()]
