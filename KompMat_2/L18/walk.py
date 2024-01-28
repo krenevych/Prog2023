@@ -1,7 +1,5 @@
 import os
 
-#test
-
 for path in os.walk("."):
     for file in path[2]:
         print(file)
