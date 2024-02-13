@@ -37,7 +37,15 @@ class QuadraticEquation:
 
 ###############################
 if __name__ == '__main__':
-    eq = QuadraticEquation(0, 0, 0)
+    #    0   -8  -18
+    #    0   -5    0
+    #   -9   40  -42
+    eq = QuadraticEquation(0 ,  -8 , -18)
     print(eq.a, eq.b, eq.c)
-
+    print(eq.solutions())
+    eq = QuadraticEquation(0 ,  -5,    0)
+    print(eq.a, eq.b, eq.c)
+    print(eq.solutions())
+    eq = QuadraticEquation(-9 ,  40 , -42)
+    print(eq.a, eq.b, eq.c)
     print(eq.solutions())
