@@ -29,11 +29,11 @@ class Triangle:
     def get_c(self):
         return self.__c
 
-    def perimeter(self):
+    def _perimeter(self):
         return (self.__a + self.__b + self.__c) / 2
 
     def area(self):
-        p = self.perimeter()
+        p = self._perimeter()
         return (p * (p - self.__a) * (p - self.__b) * (p - self.__c))**0.5
 
     def show(self):
