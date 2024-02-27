@@ -10,9 +10,13 @@ class Triangle:
         self.color = Triangle.default_color
         self.position = (0, 0)
         self.rotation = 0
+        self.scale = (1, 1)
 
     def set_position(self, x, y):
         self.position = (x, y)
+
+    def set_scale(self, scale_x, scale_y):
+        self.scale = (scale_x, scale_y)
 
     def move(self, dx, dy):
         self.position = (self.position[0] + dx, self.position[1] + dy)
@@ -28,8 +32,10 @@ class Triangle:
 
     def rotationMatrix(self):
         fi = self.rotation
-        fiMatrix = [[cos(fi), -sin(fi)],
-                    [sin(fi), cos(fi)]]
+        fiMatrix = [
+            [cos(fi), -sin(fi)],
+            [sin(fi), cos(fi)]
+        ]
         return fiMatrix
 
     @staticmethod
@@ -39,11 +45,17 @@ class Triangle:
         turnedVertex1[1] = M[1][0] * v[0] + M[1][1] * v[1]
         return turnedVertex1
 
-    def calc_abs_pos(self):
-        M = self.rotationMatrix()
-        turnedVertex1 = Triangle.multMatrixVector(M, self._vertex1)
-        turnedVertex2 = Triangle.multMatrixVector(M, self._vertex2)
+    @staticmethod
+    def scaleVertex(vertex, scale):
+        return (scale[0] * vertex[0],
+                scale[0] * vertex[1])
 
+    def calc_abs_pos(self):
+        scaledVertex1 = Triangle.scaleVertex(self._vertex1, self.scale)
+        scaledVertex2 = Triangle.scaleVertex(self._vertex2, self.scale)
+        M = self.rotationMatrix()
+        turnedVertex1 = Triangle.multMatrixVector(M, scaledVertex1)
+        turnedVertex2 = Triangle.multMatrixVector(M, scaledVertex2)
 
         v1 = (self.position[0] + turnedVertex1[0],
               self.position[1] + turnedVertex1[1])
@@ -71,8 +83,9 @@ if __name__ == '__main__':
     triangle.draw()
     # turtle.clear()
     for degree in range(3, 363, 3):
-        triangle.set_rotation_degree(degree)
-        triangle.move(degree / 3, 0)
+        # triangle.set_rotation_degree(degree)
+        triangle.set_scale(1, abs(sin(radians(degree))))
+        # triangle.move(degree / 3, 0)
         triangle.draw()
         turtle.clear()
 
