@@ -1,4 +1,5 @@
 from turtle import *
+from random import randint
 
 
 class Triangle:
@@ -33,12 +34,26 @@ class Triangle:
         goto(*v0)
         up()
 
+def createTriangles(number):
+    # генерація випадкового числа з проміжку  [0, 10]
+    bound = 350
+    triangles = []
+    for i in range(number):
+        x1 = randint(-bound, bound)
+        y1 = randint(-bound, bound)
+        x2 = randint(-bound, bound)
+        y2 = randint(-bound, bound)
+        t = Triangle(x1, y1, x2, y2)
+        triangles.append(t)
+    return triangles
 
 if __name__ == '__main__':
-    t = Triangle(100, 50, -200, 100)
-    t.draw()
-    clear()
-    t.translate(-100, -200)
-    t.draw()
+    triangles = createTriangles(5)
+    for t in triangles:
+        bound = 100
+        x0 = randint(-bound, bound)
+        y0 = randint(-bound, bound)
+        t.set_position(x0, y0)
+        t.draw()
 
     mainloop()
