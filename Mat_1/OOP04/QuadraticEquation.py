@@ -27,7 +27,23 @@ class QuadraticEquation(Equation):
                 return x1, x2
 
 if __name__ == '__main__':
-    pass
+    eq1 = QuadraticEquation(0, 2, 3)
+    print(eq1.solve())
+    eq2 = QuadraticEquation(0, 0, 0)
+    print(eq2.solve())
+    eq3 = QuadraticEquation(0, 0, 5)
+    print(eq3.solve())
+
+    eq1 = QuadraticEquation(1, -3, 2)
+    print(eq1.solve())
+    eq2 = QuadraticEquation(1, 2, 1)
+    print(eq2.solve())
+    eq3 = QuadraticEquation(1, 1, 5)
+    print(eq3.solve())
+    eq7 = QuadraticEquation(4, 1, -5)
+    print(eq7.solve())
+    eq8 = QuadraticEquation(1, 1, 1)
+    print(eq8.solve())
 
 
 
