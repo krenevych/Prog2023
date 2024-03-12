@@ -1,0 +1,19 @@
+/usr/local/bin/python3.12 /Users/andriikrenevych/Repo/Prog2023/KompMat_2/OOP05/QuadraticEquation.py
+0x**2 + 5x + 4 = 0
+(-0.8,)
+0x**2 + 0x + 4 = 0
+()
+0x**2 + 0x + 0 = 0
+infinity
+0x**2 + 5x + 0 = 0
+(0.0,)
+1x**2 + 3x + 8 = 0
+()
+1x**2 + 4x + 4 = 0
+(-2.0,)
+1x**2 + -3x + 2 = 0
+(2.0, 1.0)
+2x**2 + -6x + 4 = 0
+(2.0, 1.0)
+
+Process finished with exit code 0

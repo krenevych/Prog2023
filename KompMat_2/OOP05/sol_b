@@ -1,0 +1,19 @@
+/usr/local/bin/python3.12 /Users/andriikrenevych/Repo/Prog2023/KompMat_2/OOP05/BiQuadraticEquation.py
+0x^4 + 5x^2 + 4 = 0
+()
+0x^4 + 0x^2 + 4 = 0
+()
+0x^4 + 0x^2 + 0 = 0
+infinity
+0x^4 + 5x^2 + 0 = 0
+(0.0,)
+1x^4 + 3x^2 + 8 = 0
+()
+1x^4 + 4x^2 + 4 = 0
+()
+1x^4 + -3x^2 + 2 = 0
+(1.4142135623730951, -1.0, 1.0, -1.4142135623730951)
+2x^4 + -6x^2 + 4 = 0
+(1.4142135623730951, -1.0, 1.0, -1.4142135623730951)
+
+Process finished with exit code 0
