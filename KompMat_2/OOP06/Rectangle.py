@@ -27,13 +27,15 @@ class Rectangle(Figure):
 
 if __name__ == '__main__':
     turtle.speed(0)
-    triangle = Rectangle(100, 100)
-    triangle.draw()
+    figure = Rectangle(100, 100)
+    figure.draw()
 
-    for degree in range(3, 363, 3):
-        triangle.set_rotation_degree(degree)
-
-        triangle.draw()
+    for step in range(1, 100):
+    # for degree in range(3, 363, 3):
+        # figure.set_rotation_degree(degree)
+        # figure.move(degree, degree)
+        figure.set_scale(1 + step / 20, 1 + step /20)
+        figure.draw()
         turtle.clear()
 
     turtle.mainloop()
