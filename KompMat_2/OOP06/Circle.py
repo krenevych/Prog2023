@@ -4,13 +4,14 @@ import turtle
 
 class Circle(Figure):
 
-    def __init__(self, r):
+    def __init__(self, r, x1 = 0, y1 = 0):
         super().__init__()
+        self._vertex1 = (x1, y1)
         self._r = r
 
     def draw(self):
         s = self._r * self.scale[1]
-        v1 = self.position[0], self.position[1] - s
+        v1 = self.position[0] + self._vertex1[0], self.position[1] + self.position[1] - s
 
         turtle.color(self.color)
         turtle.up()
@@ -19,7 +20,6 @@ class Circle(Figure):
         turtle.circle(s)
         turtle.up()
         turtle.color(Circle.default_color)
-
 
 
 if __name__ == '__main__':

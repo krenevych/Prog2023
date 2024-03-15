@@ -25,12 +25,9 @@ class Car(Figure):
 
 if __name__ == '__main__':
     body = Rectangle(200, 100)
-    window = Triangle(100, 0, 50, 100)
-    window.set_position(50, 100)
-    wheel1 = Circle(20)
-    wheel2 = Circle(20)
-    wheel1.set_position(35, -25)
-    wheel2.set_position(165, -25)
+    window = Triangle(50, 100, 150, 100, 125, 150)
+    wheel1 = Circle(20, 35, -25)
+    wheel2 = Circle(20, 165, -25)
 
     car = Car()
     car.add_component(body)
@@ -38,7 +35,11 @@ if __name__ == '__main__':
     car.add_component(wheel1)
     car.add_component(wheel2)
 
-    for step in range(1, 100):
-        car.move(10, 0)
+    turtle.speed(0)
+    for step in range(1, 100, 10):
+        # car.move(10, 0)
+        car.set_scale(1 + step / 10, 1 + step / 10)
         car.draw()
         turtle.clear()
+
+    turtle.mainloop()
