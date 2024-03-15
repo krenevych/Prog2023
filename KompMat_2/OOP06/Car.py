@@ -17,6 +17,9 @@ class Car(Figure):
 
     def draw(self):
         for component in self.components:
+            component.position = self.position
+
+        for component in self.components:
             component.draw()
 
 

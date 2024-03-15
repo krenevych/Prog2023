@@ -4,9 +4,10 @@ import turtle
 
 class Rectangle(Figure):
 
-    def __init__(self, x1, y1):
+    def __init__(self, x1, y1, x2=0, y2=0):
         super().__init__()
         self._vertex1 = (x1, y1)
+        self._vertex1 = (x2, y2)
 
     def draw(self):
         v1 = self.calc_abs_pos((self._vertex1[0], 0))

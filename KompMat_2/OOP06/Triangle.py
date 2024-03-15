@@ -5,14 +5,16 @@ import turtle
 
 class Triangle(Figure):
 
-    def __init__(self, x1, y1, x2, y2):
+    def __init__(self, x1, y1, x2, y2, x3=0, y3=0):
         super().__init__()
         self._vertex1 = (x1, y1)
         self._vertex2 = (x2, y2)
+        self._vertex3 = (x3, y3)
 
     def draw(self):
         v1 = self.calc_abs_pos(self._vertex1)
         v2 = self.calc_abs_pos(self._vertex2)
+        v3 = self.calc_abs_pos(self._vertex2)
         turtle.color(self.color)
         turtle.up()
         turtle.setpos(*self.position)
