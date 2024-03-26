@@ -20,6 +20,9 @@ class ProtectedDictInt:
     def __len__(self):
         return len(self.__dict)
 
+    def __delitem__(self, key):
+        del self.__dict[key]
+
 if __name__ == '__main__':
     d = ProtectedDictInt()
     d[23] = "Hello"
@@ -33,7 +36,10 @@ if __name__ == '__main__':
     d2 = ProtectedDictInt()
     d2[45] = "333"
 
+    print("d2 = ", d2)
+    del d2[45]  # magic method __delitem__
+    print("d2 = ", d2)
     # TODO: implement corresponding magic methods
-    d3 = d + d2
-    d4 = d3 + (234, "123")
-    d5 = d4 - 23
+    # d3 = d + d2
+    # d4 = d3 + (234, "123")
+    # d5 = d4 - 23
