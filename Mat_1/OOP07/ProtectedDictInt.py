@@ -17,6 +17,9 @@ class ProtectedDictInt:
     def __contains__(self, item):
         return item in self.__dict
 
+    def __len__(self):
+        return len(self.__dict)
+
 
 if __name__ == '__main__':
     d = ProtectedDictInt()
