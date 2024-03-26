@@ -35,6 +35,13 @@ class ProtectedDictInt:
     def __delitem__(self, key):
         del self.__dict[key]
 
+    def __sub__(self, other):
+        new_dict = ProtectedDictInt()
+        for k, v in self.__dict.items():
+            if other != k:
+                new_dict[k] = v
+
+        return new_dict
 
 
 if __name__ == '__main__':
@@ -58,6 +65,6 @@ if __name__ == '__main__':
     print("d2", d2)
     d3 = d2 - 34
     # del d2[34]
-    print("d2", d2)
+    print("d3", d3)
 
 
