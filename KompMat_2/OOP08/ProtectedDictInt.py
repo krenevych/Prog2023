@@ -29,3 +29,11 @@ if __name__ == '__main__':
     print(23 in d)
     print(2323 in d)
     print(len(d))
+
+    d2 = ProtectedDictInt()
+    d2[45] = "333"
+
+    # TODO: implement corresponding magic methods
+    d3 = d + d2
+    d4 = d3 + (234, "123")
+    d5 = d4 - 23
