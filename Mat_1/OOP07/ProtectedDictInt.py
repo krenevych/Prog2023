@@ -20,6 +20,22 @@ class ProtectedDictInt:
     def __len__(self):
         return len(self.__dict)
 
+    def __add__(self, other):
+        new_dict = ProtectedDictInt()
+        for k, v in self.__dict.items():
+            new_dict[k] = v
+
+        if type(other) == tuple or type(other) == list: #    кортеж/список
+            assert len(other) % 2 == 0
+            for i in range(0, len(other), 2):
+                new_dict[other[i]] = other[i+1]
+
+        return new_dict
+
+    def __delitem__(self, key):
+        del self.__dict[key]
+
+
 
 if __name__ == '__main__':
     d = ProtectedDictInt()
@@ -34,3 +50,14 @@ if __name__ == '__main__':
     print(23 in d)
     print(23223 in d)
     print(len(d))
+    d2 = d + (34, 65, 77, "hello77") # 1 - додавання кортежу
+    # d2 = d2 + {88: 34}   # 2 - додавання словника
+    # d_tmp = ProtectedDictInt()
+    # d_tmp[99] = 99
+    # d2 = d + d_tmp # - додавання словника ProtectedDictInt
+    print("d2", d2)
+    d3 = d2 - 34
+    # del d2[34]
+    print("d2", d2)
+
+
