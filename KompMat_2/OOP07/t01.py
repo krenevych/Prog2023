@@ -6,13 +6,16 @@ class Integer:
     def print(self):
         print(self.a)
 
+    def __eq__(self, other):
+        if type(other) == Integer:
+            return self.a == other.a
+        elif type(other) == int:
+            return self.a == other
+        else:
+            return False
+
     def add(self, other):
         return Integer(self.a + other.a)
-
-
-i1 = Integer(7)
-i2 = Integer(4)
-i_res = i1.add(i2)
 
 
 class Rational(Integer):
@@ -39,6 +42,13 @@ class Rational(Integer):
             den = self.b * other.b
             return Rational(num, den)
 
+
+
+i1 = Integer(7)
+i2 = Integer(4)
+i_res = i1.add(i2)
+if i_res != 11:
+    raise IndentationError()
 
 r1 = Rational(2, 3)
 i3 = Integer(7)
