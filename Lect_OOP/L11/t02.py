@@ -10,6 +10,8 @@ class Pet(metaclass=ABCMeta):  # metaclass=ABCMeta -  означає, що Pet �
         pass
 
 class Cat(Pet):
+    # def __init__(self, name):  - створення конструктора у нашому випадку є зайвий код
+    #     super().__init__(name)
 
     def voice(self):
         print("Міу-міу")
