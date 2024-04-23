@@ -18,7 +18,7 @@ class FileReader:
         with open(self.file_name) as f:
             for line in f:
                 for observer in self.observers:
-                    observer.onReceive(line.rstrip())
+                    observer.onReceive(line.rstrip()) # відправка прочитаного рядока кожному зі спостерігачів
 
 
 if __name__ == '__main__':
