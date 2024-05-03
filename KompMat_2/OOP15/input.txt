@@ -1,0 +1,11 @@
+class FileReader:
+    def __init__(self, fileName):
+        self.fileName = fileName
+
+    def read(self):
+        with open(self.fileName) as f:
+            for line in f:
+                print(line.split())
+
+if __name__ == '__main__':
+    file_reader = FileReader("")
