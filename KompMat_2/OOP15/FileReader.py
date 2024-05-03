@@ -6,6 +6,11 @@ class FileReaderLineObserver(metaclass=ABCMeta):
     def onReceive(self, line):
         pass
 
+    @abstractmethod
+    def onReadFinish(self):
+        pass
+
+
 class FileReader:
     def __init__(self, fileName):
         self.fileName = fileName
@@ -21,5 +26,8 @@ class FileReader:
                 line_cut = line.rstrip()
                 for observer in self.observers:
                     observer.onReceive(line_cut)
+
+        for observer in self.observers:
+            observer.onReadFinish()
 
 
